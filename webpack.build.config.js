@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: { app: './src/components/index.tsx'},
+  entry: { app: './src/index.tsx'},
   mode: "production",
   target: "web",   
     module: {
@@ -32,7 +32,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'production',
-      template: path.resolve(__dirname, "src","components", "index.html"),
+      template: path.resolve(__dirname, "src","index.html"),
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),      

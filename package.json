@@ -2,7 +2,13 @@
   "name": "demo",
   "version": "1.0.0",
   "description": "Demostration wep app",
-  "main": "index.js",
+  "main": "index.tsx",
+  "scripts": {
+    "dev": "webpack-dev-server --hot --open --config webpack.dev.config.js",
+    "prod": "webpack -p --config webpack.build.config.js  --optimize-max-chunks 1 --progress"
+  },
+  "author": "Joseph Freer",
+  "license": "ISC",
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/html-webpack-plugin": "^3.2.3",
@@ -12,7 +18,7 @@
     "@types/webpack": "^4.41.22",
     "axios": "^0.19.2",
     "clean-webpack-plugin": "^3.0.0",
-    "csstype": "^3.0.3",
+    "csstype": "^3.0.4",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.31",
@@ -22,7 +28,7 @@
     "react-dom": "^16.14.0",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts-ts": "^3.1.0",
+    "react-scripts-ts": "^4.0.8",
     "react-tabs": "^3.1.1",
     "redux": "^4.0.5",
     "save": "^2.4.0",
@@ -50,11 +56,5 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
-  },
-  "scripts": {
-    "dev": "webpack-dev-server --hot --open --config webpack.dev.config.js",
-    "prod": "webpack -p --config webpack.build.config.js  --optimize-max-chunks 1 --progress"
-  },
-  "author": "Joseph Freer",
-  "license": "ISC"
+  }
 }

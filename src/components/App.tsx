@@ -1,16 +1,13 @@
-import _ from 'lodash';
-import main from './main'
 import * as React from 'react'
 import { Fragment } from 'react'
 import '../styles/main.scss'
 
-interface Props {
+import Main from './main'
 
+interface Props {
 }
 
 interface State {
-  
-
 }
 
 class App extends React.Component<Props, State> {
@@ -23,18 +20,11 @@ class App extends React.Component<Props, State> {
 
   
 
-  render() {
-
-    const authProps = {
-      
-    }
-
+  render() {     
     return (
-      <div>
-        <Fragment>
-          <main/>
-        </Fragment>
-      </div>
+      <Fragment>        
+        <Main/>     
+      </Fragment>
     )
   }
 }

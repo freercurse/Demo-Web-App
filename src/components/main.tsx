@@ -11,7 +11,7 @@ interface State {
 
 }
 
-class main extends React.Component<Props, State> {
+class Main extends React.Component<Props, State> {
   constructor(props: any) {
     super(props)
     this.state = {
@@ -21,19 +21,13 @@ class main extends React.Component<Props, State> {
 
 
 
-  render() {
-
-    const authProps = {
-
-    }
+  render() {   
 
     return (
-      <div>
-        <Fragment>
-          Hello World What are you doing there
-        </Fragment>
-      </div>
+      <Fragment>        
+         Hello World What are you doing there        
+      </Fragment>
     )
   }
 }
-export default main
+export default Main
