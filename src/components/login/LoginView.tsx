@@ -18,16 +18,28 @@ class LoginView extends React.Component<Props, State> {
      
     }
   }
+
+  handleSubmit = (e:any) => {
+    console.log(e.target.UN.value, e.target.PW.value)
+    console.log("you just logged in :)")
+  }
+
   render() {        
 
     return (
-      <Fragment>
-        <form>
-          <label>Please enter the username and password</label>
-          <input type="text" />
-          <input type="password"/>
-        </form>
+    <div className="modal">
+      <Fragment >
+        <div className="flex_centre">
+          <h1>Login Form</h1>
+          <form className="loginForm" onSubmit={(e) => {e.preventDefault(), this.handleSubmit(e)} }>
+            <label className="LblBox">Please enter the username and password</label><p />
+            <label>username : <input className="UNBox" name="UN" type="text" /></label><p/>
+            <label>password : <input className="PWBox" name="PW" type="password" /></label><p/>
+            <input className="BtnBox" type="submit"/>
+          </form>
+        </div>
       </Fragment>
+    </div>
     )
   }
 }
