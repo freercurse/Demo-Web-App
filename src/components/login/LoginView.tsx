@@ -39,26 +39,34 @@ class LoginView extends React.Component<Props, State> {
     }
   }
 
+  handleLogOut = () => {
+    this.setState({ verified: false });
+
+    this.setState({ Message: "You Have been Logged Out" });
+    setTimeout(() => { this.setState({ Message: "" }) }, 3000)
+  }
+
   render() {   
     const prop = {
-      message: this.state.Message
+      message: this.state.Message,
+      logOut: this.handleLogOut
     }
 
     return (
     <div className="modal">
-      {!this.state.verified && <Fragment >
-        <div className="flex_centre">
-          <h1>Login Form</h1>
-          <form className="loginForm" onSubmit={(e) => {e.preventDefault(), this.handleSubmit(e)} }>
-            <label className="LblBox">Please enter the username and password</label><p />
-            <label>username : <input className="UNBox" name="UN" type="text" /></label><p/>
-            <label>password : <input className="PWBox" name="PW" type="password" /></label><p/>
-              <input className="BtnBox" type="submit" />              
-            </form>            
-            <ErrorNote {...prop}/>
-          </div>            
-        </Fragment>||
-        <Dashboard />}
+        {!this.state.verified && <Fragment >
+          <div className="flex_centre">
+            <h1>Login Form</h1>
+            <form className="loginForm" onSubmit={(e) => { e.preventDefault(), this.handleSubmit(e) }}>
+              <label className="LblBox">Please enter the username and password</label><p />
+              <label>username : <input className="UNBox" name="UN" type="text" /></label><p />
+              <label>password : <input className="PWBox" name="PW" type="password" /></label><p />
+              <input className="BtnBox" type="submit" />
+            </form>
+            <ErrorNote {...prop} />
+          </div>
+        </Fragment> ||
+          <Dashboard {...prop} />}
     </div>
     )
   }  
