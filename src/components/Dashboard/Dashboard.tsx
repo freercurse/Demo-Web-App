@@ -14,7 +14,8 @@ interface State {
 class Dashboard extends React.Component<Props, State> {
   constructor(props: any) {
     super(props)
-    this.state = {     
+    this.state = {    
+      
     }
   }  
 
@@ -22,7 +23,7 @@ class Dashboard extends React.Component<Props, State> {
     
     return (
       <div>
-        Hello My name is Joseph and this is a dashboard before creation
+        Hello My name is Joseph and this is a dashboard before creation        
       </div>
     )
   }

@@ -12,6 +12,7 @@ interface Props {
 interface State {
  Message:string
   verified: boolean
+  price: 50
 }
 
 class LoginView extends React.Component<Props, State> {
@@ -19,7 +20,8 @@ class LoginView extends React.Component<Props, State> {
     super(props)
     this.state = {
       verified: false,
-      Message: null
+      Message: null,
+      price: 50
     }
   }
 
@@ -51,7 +53,7 @@ class LoginView extends React.Component<Props, State> {
             <label className="LblBox">Please enter the username and password</label><p />
             <label>username : <input className="UNBox" name="UN" type="text" /></label><p/>
             <label>password : <input className="PWBox" name="PW" type="password" /></label><p/>
-            <input className="BtnBox" type="submit"/>
+              <input className="BtnBox" type="submit" />              
             </form>            
             <ErrorNote {...prop}/>
           </div>            
